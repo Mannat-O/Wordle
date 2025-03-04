@@ -1,0 +1,38 @@
+{
+
+    "workbench.colorCustomizations": {
+
+         // General Theme
+        "editor.background": "#12151a",
+
+        // Cursor Customizations
+        "editorCursor.foreground": "#ffcc00",
+        "editor.cursorBlinking": "smooth",  // Options: blink, smooth, phase, expand
+
+        // Bracket Matching
+        "editorBracketPairGuide.activeBackground": "#ff6f00",
+
+        // Find Match Highlight
+        "editor.findMatchBackground": "#a0a0a0",
+        "editor.findMatchBorder": "#d6ff4e",
+
+        // Scrollbar Customizations
+        "editorScrollbar.background": "#5a5a5a",
+        "editorScrollbar.foreground": "#a0a0a0",
+
+
+        // Error & Warning Highlight
+        "editorError.foreground": "#ff0000",
+        "editorWarning.foreground": "#ff9900",
+
+        // Gutter Customizations
+        "editorGutter.background": "#1e1e1e",
+        "editorGutter.border": "#d4d4d4",
+
+        // Hover Widget Background
+        "editorHoverWidget.background": "#2c2c2c",
+
+        
+    },
+    "workbench.colorTheme": "Monokai"
+}
