@@ -1,7 +1,7 @@
 import React from 'react';
 import { GUESS_LENGTH, LIST_LENGTH } from '../../constants';
 
-function GuessInput({ handleGuesses }) {
+function GuessInput({ handleGuesses, gameStatus }) {
   const [guess, setGuess] = React.useState('');
 
   function handleSubmit(event) {
@@ -22,6 +22,7 @@ function GuessInput({ handleGuesses }) {
 
         <input
           required
+          disabled={gameStatus !== 'running'}
           minLength={5}
           maxLength={5}
           id="guess-input"

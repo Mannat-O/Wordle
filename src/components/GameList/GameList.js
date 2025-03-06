@@ -1,7 +1,6 @@
 import React from 'react';
 import { LIST_LENGTH } from '../../constants';
 import { range } from '../../utils';
-import { checkGuess } from '../../game-helpers';
 import GuessRow from '../GuessRow/GuessRow';
 
 function GameList({ list, answer }) {
@@ -15,19 +14,6 @@ function GameList({ list, answer }) {
       })}
     </div>
   );
-}
-
-function checkWin(list) {
-  if (list === null) return false;
-
-  const statusCheck = list.map((item) => {
-    return item.status;
-  });
-
-  for (let i = 0; i < statusCheck.length; i++) {
-    if (statusCheck[i] !== 'correct') return false;
-  }
-  return true;
 }
 
 export default GameList;
