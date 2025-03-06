@@ -196,13 +196,6 @@ h1 {
   border: 0;
 }
 
-/*
-  Modal styles
-
-  HACK: I'm doing this in a quick and dirty way.
-  Later in the course, we'll see my preferred way of building
-  modals in React.
-*/
 [data-reach-dialog-content] {
   position: relative;
   border-radius: 8px;

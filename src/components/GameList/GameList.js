@@ -1,33 +1,33 @@
 import React from 'react';
-import { GUESS_LENGTH } from '../../constants';
+import { LIST_LENGTH } from '../../constants';
 import { range } from '../../utils';
 import { checkGuess } from '../../game-helpers';
+import GuessRow from '../GuessRow/GuessRow';
 
 function GameList({ list, answer }) {
   return (
     <div className="guess-results">
-      {list.map((item) => {
-        const letterStatus = checkGuess(item, answer);
-        return (
-          <p key={crypto.randomUUID()} className="guess">
-            {range(GUESS_LENGTH).map((num) => {
-              return (
-                <span
-                  key={crypto.randomUUID()}
-                  className={
-                    letterStatus !== null
-                      ? `cell ${letterStatus[num].status}`
-                      : 'cell'
-                  }>
-                  {item.length !== 0 ? letterStatus[num].letter : ''}
-                </span>
-              );
-            })}
-          </p>
-        );
+      {range(LIST_LENGTH).map((index) => {
+        // const letterStatus = checkGuess(item, answer);
+        // const winner = checkWin(letterStatus);
+        // if (winner === true) setGameResult(true);
+        return <GuessRow key={index} value={list[index]} answer={answer} />;
       })}
     </div>
   );
+}
+
+function checkWin(list) {
+  if (list === null) return false;
+
+  const statusCheck = list.map((item) => {
+    return item.status;
+  });
+
+  for (let i = 0; i < statusCheck.length; i++) {
+    if (statusCheck[i] !== 'correct') return false;
+  }
+  return true;
 }
 
 export default GameList;
